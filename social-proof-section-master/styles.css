@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+:root {
+  /* primary-colors */
+  --vd-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  /* neutral-colors */
+  --dg-magenta: hsl(303, 10%, 53%);
+  --lg-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+  /* fonts */
+  --main-font: "League Spartan", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--main-font);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background: url(/images/bg-pattern-top-desktop.svg) no-repeat top left 15vw,
+    url(/images/bg-pattern-bottom-desktop.svg) no-repeat bottom right 6vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* re-usable classes */
+.img {
+  display: block;
+  max-width: 100%;
+}
+
+.grid-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* title-ratings container */
+.container .title-ratings {
+  max-width: 108rem;
+  width: 100%;
+  margin-bottom: 7rem;
+}
+
+/* header */
+.container .header {
+  max-width: 35rem;
+}
+
+.header .title {
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--vd-magenta);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.header .description {
+  color: var(--dg-magenta);
+}
+
+/* ratings */
+.container .ratings {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.ratings .ratings-section {
+  flex-direction: row-reverse;
+  align-items: center;
+  background: var(--lg-magenta);
+  border-radius: 0.5rem;
+  padding: 1rem 4rem 1rem 3rem;
+  gap: 2rem;
+}
+
+.ratings .ratings-title {
+  color: var(--vd-magenta);
+  font-weight: 700;
+  vertical-align: center;
+}
+
+.ratings .stars {
+  gap: 1rem;
+}
+
+.ratings .ratings-one {
+  margin-right: 10rem;
+}
+
+.ratings .ratings-two {
+  margin-right: 5rem;
+}
+
+/* quotes */
+.container .quotes-section {
+  max-width: 108rem;
+  align-items: center;
+  gap: 3rem;
+}
+
+.quotes-section .quote-card {
+  background: var(--vd-magenta);
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.quotes-section .reviewer-info {
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.quote-card .reviewer-name {
+  font-weight: 500;
+}
+
+.quote-card .reviewer-name::after {
+  content: "Verified Buyer";
+  color: var(--soft-pink);
+  display: block;
+}
+
+.quotes-section .reviewer-img {
+  border-radius: 50%;
+  max-width: 4rem;
+  max-height: 4rem;
+}
+
+.quotes-section .card-one {
+  margin-top: -5rem;
+}
+
+.quotes-section .card-three {
+  margin-top: 5rem;
+}
+
+/* attribution */
+.attribution {
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--dg-magenta);
+}
+.attribution a {
+  color: var(--dg-magenta);
+}
+
+/* media queries */
+@media (max-width: 66rem) {
+  .ratings .ratings-one {
+    margin-right: 8rem;
+  }
+
+  .ratings .ratings-two {
+    margin-right: 2.5rem;
+  }
+}
+
+@media (max-width: 63rem) {
+  .ratings .ratings-one {
+    margin-right: 6rem;
+  }
+
+  .ratings .ratings-two {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 61rem) {
+  .ratings .ratings-one {
+    margin-right: 0;
+  }
+
+  .ratings .ratings-two {
+    margin-right: 0;
+  }
+
+  .container .ratings {
+    align-items: center;
+    padding: 0 3.5rem;
+  }
+  .ratings .ratings-section {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 57rem) {
+  .container .ratings {
+    padding: 0;
+  }
+
+  .ratings .ratings-section {
+    background: var(--lg-magenta);
+    border-radius: 1rem;
+    gap: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .grid-two-columns,
+  .grid-three-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .quotes-section .quote-card {
+    max-width: 50rem;
+  }
+
+  .container .header {
+    justify-self: center;
+  }
+
+  .quotes-section .card-one {
+    margin-top: 0;
+  }
+
+  .quotes-section .card-three {
+    margin-top: 0;
+  }
+
+  .header .title {
+    text-align: center;
+    font-size: 4.5rem;
+  }
+
+  .header .description {
+    text-align: center;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .container .title-ratings {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 35rem) {
+  .ratings .ratings-section {
+    flex-direction: column-reverse;
+  }
+
+  .header .title {
+    font-size: 4rem;
+  }
+}
